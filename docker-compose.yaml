@@ -73,6 +73,15 @@ services:
     networks:
       - sentinel_net
 
+  sentinel_antifraude:
+    build: ./sentinel_antifraude
+    container_name: sentinel_antifraude
+    depends_on:
+      - kafka
+    networks:
+      - sentinel_net
+
+
 volumes:
   postgres_data:
 
